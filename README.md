@@ -1,4 +1,4 @@
-# Assignment 3: Incarceration
-In this assignment, you'll create the necessary files to perform the analysis described on Canvas (including `analysis.R`, `index.Rmd`, and by _knitting_ your document, an `index.html` file). 
+# Incarceration
+Report on Incarceration using R and R Markdown
 
 Report: https://htmlpreview.github.io/?https://github.com/IrtiHaq/A3-Incarceration/blob/main/index.html
