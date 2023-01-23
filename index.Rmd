@@ -1,0 +1,79 @@
+---
+title: "Incarceration of African Americans In The US"
+author: "Irti Haq"
+date: "20/11/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+source("analysis.R")
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Introduction
+***
+The United States has long held the largest prison population in the world and has highest rate of incarceration. Over the last few decades, the US has witnessed a large-scale expansion of mass incarceration driven by over-policing and the War on Drugs. These policies have had a disproportionate impact on People of Colour and have led to the disproportionate incarceration of people of colour and especially of African Americans – who have long been over represented in the American Prison System.
+
+This report aims to look the how the expansion of the American prison system has affected African Americans and the over representation of African Americans in the American prison system. To do so the Variables I will be looking at are:
+
+* **Race**
+  + Racial Composition and Demographics of Prisons, This will be the main variable of interest
+
+* **Time**
+  + Changes in Prison Incarceration over time and what have the trends been from 1990 to 2016
+
+* **Prison Populations**
+  + What percent of the population between the ages of 15 - 64 are Incarcerated
+
+## Findings
+***
+In 2016 the Total Prison Population in the US was **`r total_pop`** of which **`r total_black_pop`** where African American and **`r total_white_pop`** where white. In 2016 **`r state_highest_prison_prop`** had the highest incarceration rate at **`r state_num_highest_prison_prop`** while **`r state_high_prison_black`** had the highest African American incarceration rate at **`r state_num_high_prison_black`**. The county with the highest incarceration rate in 2016 was **`r county_highest_prison_prop`** with **`r county_num_highest_prison_prop `** of the counties population in prison
+
+These statistics are already starting to show the disproportionate incarceration rate of African Americans. While the highest incarceration rate in any state was **`r state_num_highest_prison_prop`** the highest African American incarceration rate was  **`r state_num_high_prison_black`**.
+
+While the number from 2016 might seem high, they thankful don't represent the maximum. The American Prison Population between 1990 to 2016 peaked in **`r year_max_prison`** where there were **`r total_max_year`** inmates in prison of which **`r black_pop_max_year`** were African American and **`r white_pop_max_year`** were white.
+
+## Plots
+***
+### Chart 1
+
+```{r echo=FALSE, fig.cap="Line Graph Showing the Change in Racial Demographics of Prisons Over Time", out.width="100%"}
+prison_demographic_plot
+
+```
+#### **Purpose**
+This graph was included to show how racial demographics in prisons have changed over time and to show which races constitute the largest racial groups in prisons.
+
+#### **Insight**
+This graph shows that between the 1990 to 2014 African Americans were the largest race in prison. However the gap between African Americans and Whites have been shrinking and in 2015 whites crossed African Americans and are now the largest race in prison. However the gap between the percent White prisoners and Black prisoners still remains tight. This is troubling as the African Americans still make up a significantly smaller percent of the US population.   
+
+***
+### Chart 2
+
+```{r echo=FALSE, fig.cap="Scatter Plot Matrix Comparing Change in White Prison vs Black Prison Population as levels of Incarceration Have Increased", out.width="100%"}
+combined_plot_blackvwhite
+
+```
+#### **Purpose**
+This chart was included to show whether there is exists a correlation between the increase in the of rate incarceration and the size of the African American and White Prison population and they differ between the Races. This chart using coloring also shows the increase in the rate of incarceration over time. 
+
+#### **Insight**
+From the graph we can see that while the gradient of the trend line between the racial groups are similar and within the margin of error. However the strength correlation for the the African American Prison Population seems to be significantly stronger and more definitive as evident from how close the data points are to the linear regression line and the narrower confidence intervals
+
+***
+### Map of The US
+
+```{r echo=FALSE, fig.cap="Map of The US showing by a factor of how much African Americans are Overrepresented in prison in Each State", out.width="100%"}
+black_ration_map
+
+```
+#### **Purpose**
+This map was included to to show how overrepresented African Americans are in the American prison system and how the issue isn't isolated to a specific region or specific states but is a trend all across the US. This maps aims to visualize the scale and magnitude of the problem. 
+
+#### **Insight**
+From the map we can see that African Americans were most overrepresented in prisons in **`r most_disprop_state`** by **`r disprop_state_ratio`x** the state's Black population between the ages 15 - 64 followed by **`r second_most_disprop_state`** and **`r third_most_disprop_state`**. In general the map shows that this problem affects all states for which we have data for however the problem seems to be worse in the Upper Midwest.
+
+
+
+
